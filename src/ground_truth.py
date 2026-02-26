@@ -1,12 +1,4 @@
-"""
-ground_truth.py — In-Pipeline Ground Truth Assignment
-======================================================
-Labels each Cluster object that has already been produced by the
-pipeline's own Preprocessor + Detector, so cluster IDs always match.
 
-Label rules verified on 320 clusters across 4 frames:
-  CCR = 1.0000  ✓    FAR = 0.0000  ✓
-"""
 
 import numpy as np
 import logging
@@ -43,17 +35,7 @@ def _label(n: int, Lmax: float, Wmin: float, H: float, cz: float) -> str:
 
 
 def label_clusters(clusters: List[Cluster]) -> Dict[Tuple[int, int], str]:
-    """
-    Assign a ground-truth label to every cluster produced by the pipeline.
-
-    Parameters
-    ----------
-    clusters : list of Cluster objects (already produced by Detector)
-
-    Returns
-    -------
-    gt_dict : {(frame_id, cluster_id): true_label}
-    """
+  
     gt_dict: Dict[Tuple[int, int], str] = {}
 
     for c in clusters:

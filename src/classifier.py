@@ -1,14 +1,4 @@
-"""
-classifier.py — Three-Stage High-Precision Classifier
-======================================================
-Stage 1  Hard geometry → background rejection
-Stage 2  Deterministic geometry rules  (verified CCR=1.0 on 320 clusters)
-Stage 3  Random Forest confirmation
 
-Verified on dev set (4 frames, 320 clusters):
-  CCR = 1.0000  (target ≥ 0.99)  ✓
-  FAR = 0.0000  (target ≤ 0.01)  ✓
-"""
 
 import numpy as np
 import logging

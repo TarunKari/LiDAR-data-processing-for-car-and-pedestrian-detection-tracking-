@@ -1,8 +1,4 @@
-"""
-data_loader.py — LiDAR CSV Frame Loader
-Handles reading Blickfeld Cube 1 CSV exports (all 152 frames or subset).
-Columns: X;Y;Z;DISTANCE;INTENSITY;POINT_ID;RETURN_ID;AMBIENT;TIMESTAMP
-"""
+
 
 import os
 import glob

@@ -1,11 +1,4 @@
-"""
-evaluator.py — Performance Evaluation
-======================================
-CCR = correctly_classified_object_clusters / total_object_gt_clusters
-      (background clusters excluded from CCR — they are not "classified")
 
-FAR = background_clusters_predicted_as_object / total_time_hours
-"""
 
 import numpy as np
 import logging
