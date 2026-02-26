@@ -565,8 +565,6 @@ This project is licensed under the **MIT License** — see [LICENSE](LICENSE) fo
 <div align="center">
 
 **Built for IU International University of Applied Sciences**
-*Data Science Methods for Self-Driving Cars · DLBDSMLDL01*
-
-⭐ Star this repo if it helped you!
+*Case Study: Localization, Motion Planning, and Sensor Fusion · DLMDSEAAD02*
 
 </div>
