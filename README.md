@@ -31,7 +31,6 @@
 - [🔧 Configuration](#-configuration)
 - [🧩 Modules](#-modules)
 - [📈 Performance](#-performance)
-- [🎬 Generate Video](#-generate-video)
 - [📚 Dependencies](#-dependencies)
 - [🐛 Troubleshooting](#-troubleshooting)
 - [📄 License](#-license)
@@ -118,7 +117,7 @@ Unknown                                   0.0%  (    0)
                      ▼
 ┌──────────────────────────────────────────────────────┐
 │  OUTPUT: detections.csv · tracks.csv                 │
-│          evaluation_report.txt · PNGs · video.mp4    │
+│            │
 └──────────────────────────────────────────────────────┘
 ```
 
@@ -131,7 +130,6 @@ lidar_project/
 │
 ├── 📄 main.py                     # Pipeline entry point (CLI runner)
 ├── ⚙️  config.py                   # All tunable parameters
-├── 🎬 make_project_video.py       # Generate demo video from frames
 ├── 📋 requirements.txt            # Python dependencies
 ├── 📖 README.md                   # This file
 │
@@ -196,11 +194,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4 — Install video dependencies *(optional)*
 
-```bash
-pip install opencv-python pillow
-```
 
 ---
 
@@ -513,34 +507,8 @@ Blickfeld-style matplotlib plots:
 ═══════════════════════════════════════════════════════
 ```
 
----
 
-## 🎬 Generate Video
 
-```bash
-# Step 1 — Install OpenCV
-pip install opencv-python pillow
-
-# Step 2 — Generate frame images first
-python main.py --data_dir data/ --output_dir output/ --visualize
-
-# Step 3 — Build the video
-python make_project_video.py
-
-# Output saved to:
-# output/project_demo.mp4
-```
-
-**Video contents — 48 seconds, 1920×1080, 30 fps:**
-
-| Section | Duration | Content |
-|:--------|:--------:|:--------|
-| Title card | ~3 s | Project title, dataset ID, CCR/FAR |
-| Pipeline overview | ~2.5 s | All 6 stages with flow diagram |
-| Frame-by-frame | ~24 s | Overview → Pedestrian → Car+Cyclist → Top-down |
-| Comparison grid | ~3 s | All 4 frames side-by-side |
-| Performance results | ~3 s | CCR/FAR gauges |
-| Final summary | ~2.5 s | All metrics results card |
 
 ---
 
@@ -553,7 +521,6 @@ python make_project_video.py
 | `scipy` | ≥ 1.7 | Spatial algorithms, KD-tree |
 | `scikit-learn` | ≥ 1.0 | DBSCAN, Random Forest, PCA |
 | `matplotlib` | ≥ 3.4 | 3D visualisations |
-| `opencv-python` | ≥ 4.5 | Video generation *(optional)* |
 | `pillow` | ≥ 8.0 | Image processing *(optional)* |
 | `pytest` | ≥ 7.0 | Unit tests *(optional)* |
 
@@ -573,7 +540,6 @@ pip install numpy pandas scipy scikit-learn matplotlib opencv-python pillow
 | `ModuleNotFoundError` | Missing package | `pip install -r requirements.txt` |
 | `No CSV files found` | Wrong folder path | Check `--data_dir` contains `.csv` files |
 | `matplotlib backend error` | No display available | Already handled — `Agg` set automatically |
-| `VideoWriter failed` | OpenCV missing | `pip install opencv-python` |
 | `Frames folder not found` | No visualisations | Run with `--visualize` first |
 | `Low CCR / High FAR` | Wrong CSV format | Verify `;` delimiter and 9 columns |
 | `Permission denied` | File permissions | `chmod +x main.py` (Linux/macOS) |
