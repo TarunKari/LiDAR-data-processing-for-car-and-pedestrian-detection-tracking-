@@ -1,0 +1,17 @@
+{
+  "total_frames": 152,
+  "total_points": 2823415,
+  "mean_points_per_frame": 18575.098684210527,
+  "std_points_per_frame": 33.954450888076565,
+  "min_points_per_frame": 18492,
+  "max_points_per_frame": 18674,
+  "global_distance_min_m": 4.500007629394531,
+  "global_distance_max_m": 268.0045471191406,
+  "global_distance_mean_m": 18.91208839416504,
+  "global_intensity_min": 5.0,
+  "global_intensity_max": 415.0,
+  "global_intensity_mean": 20.755035400390625,
+  "global_z_min_m": -22.365882873535156,
+  "global_z_max_m": 59.39964294433594,
+  "sensor_spec_range_ok": false
+}
